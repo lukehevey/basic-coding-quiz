@@ -1,0 +1,35 @@
+header {
+    display: flex;
+    justify-content: space-between;
+}
+
+header a {
+    font-size: 20px;
+    padding: 20px 0;
+    font-weight: bold;
+}
+
+.start-screen,
+.question-screen,
+.end-screen {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 5px;
+}
+
+button {
+    background-color: crimson;
+    border-radius: 5px;
+    width: 150px;
+    height: 35px;
+}
+
+.hide {
+    display: none;
+}
+
+.start-screen p {
+    font-size: 20px;
+}
