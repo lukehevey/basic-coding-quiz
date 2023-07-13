@@ -11,10 +11,10 @@
 
 <body>
     <header>
-        <a href="#high-scores">View High Scores</a>
+        <button class="scoreBtn" type="submit">View High Scores</button>
         <h2>Time: <span id="timer">75</span></h2>
     </header>
-    <section class="start-screen">
+    <section class="start-screen hide">
         <h1>Coding Quiz Challenge</h1>
         <p>Try to answer the following code-related questions within the time limit.
             <br>
@@ -30,22 +30,27 @@
         <h2>Good Job!</h2>
         <h3>Your Final Score Is: <span id="final-score">0</span></h3>
         <label for="initials-area">Enter Initials:</label>
-        <input type="text" name="initials" maxlength="3" id="initials">
+        <form id = "initial-form"></form>
+        <input type="text" name="initials" maxlength="3" id="initials" placeholder="Initials">
         <button class="submitBtn" type="submit">Submit Score</button>
-    </section>
+    </section> 
 
-    <section id="high-scores" class="hide">
-        <h2>List of Highest Scores</h2>
-<ol>
+        <section class="high-screen hide">
 
+            <h2>Highest Scores Achieved</h2>
+            <ol id="high-scores">
+                <li class="list-group-item"></li>
+                <li class="list-group-item"></li>
+                <li class="list-group-item"></li>
+            </ol>
+            
 
-
-</ol>
-<button class="backBtn"> Go Back</button>
-<button class="clearBtn">Clear Scores</button>
-
-    </section>
-    <script src="script.js"></script>
+            <button onClick="window.location.reload();">Go Back</button>
+            <!-- <button class="backBtn">Go Back</button> -->
+            <button class="clearBtn">Clear Scores</button>
+            </div>
+        </section>
+        <script src="script.js"></script>
 </body>
 
 </html>
