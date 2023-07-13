@@ -16,8 +16,8 @@ var questions = [
     },
     {
         question: "String values must be enclosed within_____ when being assigned to variables.",
-        answer: "C. quotes",
-        choices: ["A. commas", "B. curly brackets", "C. quotes", "D. parenthesis"]
+        answer: "B. quotes",
+        choices: ["A. commas", "B. quotes", "C. curly brackets", "D. parenthesis"]
     },
     {
         question: "A very useful tool used during developmentand debugging for printing content to the debugger is:",
@@ -31,16 +31,31 @@ var startButton = document.querySelector(".start")
 var submitButton = document.querySelector(".submitBtn")
 var backButton = document.querySelector(".backBtn")
 var clearButton = document.querySelector(".clearBtn")
+var highScoreBtn = document.querySelector(".scoreBtn")
 var questionScreen = document.querySelector(".question-screen")
 var startScreen = document.querySelector(".start-screen")
 var endScreen = document.querySelector(".end-screen")
+var highScoreScreen = document.querySelector(".high-screen")
 var timerEl = document.querySelector("#timer")
 var scoreEl = document.querySelector("#final-score")
+var initialsEl = document.querySelector("#initials")
 var timeInterval;
 var scoreInterval;
+
+highScoreBtn.addEventListener("click", showScores)
 startButton.addEventListener("click", startGame)
 
+startPage()
+
+function startPage() {
+    highScoreScreen.classList.add("hide")
+    questionScreen.classList.add("hide")
+    startScreen.classList.remove("hide")
+}
+
+
 function startGame() {
+    highScoreScreen.classList.add("hide")
     startScreen.classList.add("hide")
     questionScreen.classList.remove("hide")
     showQuestion()
@@ -64,13 +79,10 @@ function countdown() {
 
             clearInterval(timeInterval);
             endGame()
-        }
+        } 
     }, 1000);
 }
 
-if (timerEl <= 0) {
-
-}
 
 
 function showQuestion() {
@@ -108,6 +120,7 @@ function checkScore(answerChoice) {
 }
 
 function endGame() {
+    highScoreScreen.classList.add("hide")
     questionScreen.classList.add("hide")
     endScreen.classList.remove("hide")
 }
@@ -123,4 +136,13 @@ scoreInterval = setInterval(function () {
         scoreEl.textContent = timeLeft;
 
 });
+
+ submitButton.addEventListener("click", showScores)
+
+function showScores() {
+    
+    startScreen.classList.add("hide")
+    endScreen.classList.add("hide")
+    highScoreScreen.classList.remove("hide")
+}
 
