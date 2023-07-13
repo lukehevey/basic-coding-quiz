@@ -12,7 +12,7 @@ header a {
 .start-screen,
 .question-screen,
 .end-screen,
-#high-screen {
+.high-screen {
     display: flex;
     justify-content: center;
     flex-direction: column;
